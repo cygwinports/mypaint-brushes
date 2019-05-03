@@ -1,0 +1,21 @@
+NAME="mypaint-brushes"
+VERSION=1.3.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="MyPaint brushes"
+DESCRIPTION="Brushes used by MyPaint and other software using libmypaint."
+HOMEPAGE="http://mypaint.org/"
+SRC_URI="https://github.com/mypaint/mypaint-brushes/archive/v${VERSION}/mypaint-brushes-v${VERSION}.tar.gz"
+
+ARCH=noarch
+
+PKG_NAMES="${NAME} ${NAME}-devel"
+mypaint_brushes_CONTENTS="
+	usr/share/doc/${NAME}
+	usr/share/mypaint-data/1.0/brushes/
+"
+mypaint_brushes_devel_REQUIRES=${NAME}
+mypaint_brushes_devel_CONTENTS="
+	usr/share/pkgconfig/mypaint-brushes-1.0.pc
+"
+
